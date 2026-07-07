@@ -1,3 +1,4 @@
+import os
 import base64
 import requests
 import time
@@ -15,6 +16,7 @@ app.add_middleware(
 )
 
 HF_API_URL = "https://api-inference.huggingface.co/models/llava-hf/llava-1.5-7b-hf"
+HF_TOKEN = os.environ.get("HF_TOKEN")
 
 class ImageRequest(BaseModel):
     image_base64: str
